@@ -1,0 +1,6 @@
+{
+  "name": "Hoa Lạc Giản Lưu Hương",
+  "description": "Trang chọn nhân vật với hồ sơ chi tiết, backstory, tin nhắn mở đầu và chia sẻ link nhân vật.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

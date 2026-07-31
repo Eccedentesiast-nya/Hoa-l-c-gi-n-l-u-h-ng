@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-calligraphy {
+    font-family: 'Charm', cursive, serif;
+  }
+  .font-cute {
+    font-family: 'Comfortaa', cursive, sans-serif;
+  }
+}
+
+body {
+  font-family: 'Comfortaa', cursive, sans-serif;
+  background-color: #FADAD9;
+  color: #5C2830;
+}
+
+/* Cute Animated Star Animations */
+@keyframes starFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) rotate(6deg) scale(1.08);
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.8));
+  }
+  50% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 1));
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(200, 109, 124, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(200, 109, 124, 0.45);
+  }
+}
+
+.animate-star-float {
+  animation: starFloat 3s ease-in-out infinite;
+}
+
+.animate-star-twinkle {
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Cute Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fce8e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e892a0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c86d7c;
+}
