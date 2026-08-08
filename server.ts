@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
@@ -10,6 +11,30 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+
+// Ensure public/avatars folder exists and serve it statically
+const avatarsDir = path.join(process.cwd(), 'public', 'avatars');
+if (!fs.existsSync(avatarsDir)) {
+  fs.mkdirSync(avatarsDir, { recursive: true });
+}
+app.use('/avatars', express.static(avatarsDir));
+
+// Endpoint to list custom avatars inside public/avatars directory
+app.get('/api/avatars', (req, res) => {
+  try {
+    const files = fs.readdirSync(avatarsDir);
+    // Filter only image files
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
+    const imageFiles = files.filter(file => {
+      const ext = path.extname(file).toLowerCase();
+      return imageExtensions.includes(ext);
+    });
+    res.json({ files: imageFiles });
+  } catch (error: any) {
+    console.error('Error in /api/avatars:', error);
+    res.status(500).json({ error: 'Failed to list avatars', details: error.message });
+  }
+});
 
 // Initialize Gemini Client safely
 let ai: GoogleGenAI | null = null;

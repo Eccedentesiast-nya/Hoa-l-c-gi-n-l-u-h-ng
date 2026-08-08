@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @layer utilities {
   .font-calligraphy {
     font-family: 'Charm', cursive, serif;
@@ -11,8 +13,6 @@
 
 body {
   font-family: 'Comfortaa', cursive, sans-serif;
-  background-color: #FADAD9;
-  color: #5C2830;
 }
 
 /* Cute Animated Star Animations */
@@ -66,12 +66,21 @@ body {
 ::-webkit-scrollbar-track {
   background: #fce8e8;
 }
+:where(.dark, .dark *) ::-webkit-scrollbar-track {
+  background: #251315;
+}
 
 ::-webkit-scrollbar-thumb {
   background: #e892a0;
   border-radius: 9999px;
 }
+:where(.dark, .dark *) ::-webkit-scrollbar-thumb {
+  background: #522930;
+}
 
 ::-webkit-scrollbar-thumb:hover {
   background: #c86d7c;
+}
+:where(.dark, .dark *) ::-webkit-scrollbar-thumb:hover {
+  background: #823b47;
 }

@@ -1,5 +1,4 @@
 import { Character } from '../types';
-import tucVuDocAvatar from '../assets/images/tuc_vu_doc_avatar.jpg';
 
 export const INITIAL_CHARACTERS: Character[] = [
   {
@@ -7,9 +6,9 @@ export const INITIAL_CHARACTERS: Character[] = [
     name: 'Thanh Hà Túc Vũ',
     title: 'Linh sư',
     category: 'Hiện Đại',
-    avatar: tucVuDocAvatar,
+    avatar: '',
     openingMessage: 'Bé...bé quên anh rồi à?',
-    characterLink: '',
+    characterLink: 'https://docs.google.com/document/d/1wvfR9xP3Ad6U9T-00KBws13PIRkkv98DsLX7Xoy4o0A/edit?usp=sharing',
     tags: ['Linh sư', 'Linh dị', 'Âm dương'],
     personality: 'Thâm tình, Dịu dàng, Trầm lặng, U buồn',
     voiceTone: 'Trầm ấm, Tha thiết, Nghẹn ngào',
